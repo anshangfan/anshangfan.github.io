@@ -6,18 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://anshangfan.github.io">
-  <title>九九乘法表 | Jason的博客</title>
+  <title>Java中计算程序运行耗时的方法比较 | Jason的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1.用for循环写 123456789101112public class multiplication&amp;#123;    public static void mian (String args[])&amp;#123;          for(int x=1;x&amp;lt;10;x++) &amp;#123;				for(int y=1;y&amp;lt;=x;y++) &amp;#123;					System.out.p">
+  <meta name="description" content="Java中测试程序代码运行时间的方式有两种： 第一种：以毫秒为单位计算的。 1long startTime=System.currentTimeMillis(); //下面是一些测试代码 1234567891011long startTime=System.currentTimeMillis();for(int i=0;i&amp;lt;10000;i++)&amp;#123;System.out.println">
 <meta property="og:type" content="article">
-<meta property="og:title" content="九九乘法表">
-<meta property="og:url" content="http://anshangfan.github.io/2018/03/07/九九乘法表/index.html">
+<meta property="og:title" content="Java中计算程序运行耗时的方法比较">
+<meta property="og:url" content="http://anshangfan.github.io/2018/03/08/Java中计算程序运行耗时的方法对比/index.html">
 <meta property="og:site_name" content="Jason的博客">
-<meta property="og:description" content="1.用for循环写 123456789101112public class multiplication&amp;#123;    public static void mian (String args[])&amp;#123;          for(int x=1;x&amp;lt;10;x++) &amp;#123;				for(int y=1;y&amp;lt;=x;y++) &amp;#123;					System.out.p">
-<meta property="og:updated_time" content="2018-03-08T04:05:16.000Z">
+<meta property="og:description" content="Java中测试程序代码运行时间的方式有两种： 第一种：以毫秒为单位计算的。 1long startTime=System.currentTimeMillis(); //下面是一些测试代码 1234567891011long startTime=System.currentTimeMillis();for(int i=0;i&amp;lt;10000;i++)&amp;#123;System.out.println">
+<meta property="og:updated_time" content="2018-03-08T07:20:59.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="九九乘法表">
-<meta name="twitter:description" content="1.用for循环写 123456789101112public class multiplication&amp;#123;    public static void mian (String args[])&amp;#123;          for(int x=1;x&amp;lt;10;x++) &amp;#123;				for(int y=1;y&amp;lt;=x;y++) &amp;#123;					System.out.p">
+<meta name="twitter:title" content="Java中计算程序运行耗时的方法比较">
+<meta name="twitter:description" content="Java中测试程序代码运行时间的方式有两种： 第一种：以毫秒为单位计算的。 1long startTime=System.currentTimeMillis(); //下面是一些测试代码 1234567891011long startTime=System.currentTimeMillis();for(int i=0;i&amp;lt;10000;i++)&amp;#123;System.out.println">
   
     <link rel="alternative" href="/atom.xml" title="Jason的博客" type="application/atom+xml">
   
@@ -148,32 +148,44 @@ src="//music.163.com/outchain/player?type=0&id=67272505&auto=0&height=90"></ifra
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-九九乘法表" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Java中计算程序运行耗时的方法对比" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      九九乘法表
+      Java中计算程序运行耗时的方法比较
     </h1>
   
 
         
-        <a href="/2018/03/07/九九乘法表/" class="archive-article-date">
-  	<time datetime="2018-03-07T03:04:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-07</time>
+        <a href="/2018/03/08/Java中计算程序运行耗时的方法对比/" class="archive-article-date">
+  	<time datetime="2018-03-08T07:10:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-08</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>1.用for循环写</p>
-<figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">multiplication</span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">mian</span> (<span class="params">String args[]</span>)</span>&#123;</span><br><span class="line">          <span class="keyword">for</span>(<span class="keyword">int</span> x=<span class="number">1</span>;x&lt;<span class="number">10</span>;x++) &#123;</span><br><span class="line">				<span class="keyword">for</span>(<span class="keyword">int</span> y=<span class="number">1</span>;y&lt;=x;y++) &#123;</span><br><span class="line">					System.<span class="keyword">out</span>.print(x+<span class="string">"*"</span>+y+<span class="string">"="</span>+(x*y)+<span class="string">"\t"</span>);</span><br><span class="line">					<span class="keyword">if</span> (x==y) &#123;</span><br><span class="line">						System.<span class="keyword">out</span>.println();</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">     &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<p>2.用while循环写</p>
-<figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span>  <span class="title">multiplication</span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span>(<span class="params">String[] args</span>) </span>&#123;</span><br><span class="line">       		 <span class="keyword">int</span> x = <span class="number">0</span>;</span><br><span class="line">		 <span class="keyword">while</span> (++x &lt; <span class="number">10</span>) &#123;</span><br><span class="line">			<span class="keyword">int</span> y = <span class="number">0</span>;</span><br><span class="line">			<span class="keyword">while</span> (++y &lt;= x) &#123;</span><br><span class="line">			System.<span class="keyword">out</span>.print(x + <span class="string">"*"</span> + y + <span class="string">"="</span> + (x*y) + <span class="string">"\t"</span>);</span><br><span class="line">			&#125;</span><br><span class="line">			System.<span class="keyword">out</span>.println();</span><br><span class="line">			&#125;</span><br><span class="line">				</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br></pre></td></tr></table></figure>
-<p>3.用do….while循环写</p>
-<figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">multiplication</span> &#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span>(<span class="params">String[] args</span>) </span>&#123;</span><br><span class="line">     		<span class="keyword">int</span> x=<span class="number">1</span>,y=<span class="number">1</span>;</span><br><span class="line">		   <span class="keyword">do</span>&#123;</span><br><span class="line">		         y=<span class="number">1</span>;</span><br><span class="line">		         System.<span class="keyword">out</span>.println();</span><br><span class="line">		         <span class="keyword">do</span>&#123;</span><br><span class="line">		             System.<span class="keyword">out</span>.print(<span class="string">"  "</span>+y+<span class="string">"*"</span>+x+<span class="string">"="</span>+(x*y));</span><br><span class="line">		             y++;</span><br><span class="line">		            &#125; <span class="keyword">while</span>(y&lt;=x);</span><br><span class="line">		            x++;</span><br><span class="line">		        &#125; <span class="keyword">while</span>(x&lt;<span class="number">10</span>);</span><br><span class="line">				</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br></pre></td></tr></table></figure>
+        <p>Java中测试程序代码运行时间的方式有两种：</p>
+<p>第一种：以毫秒为单位计算的。</p>
+<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">long startTime</span>=System.currentTimeMillis();</span><br></pre></td></tr></table></figure>
+<p>//下面是一些测试代码</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">long <span class="attribute">startTime</span>=System.currentTimeMillis();</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span>(int <span class="attribute">i</span>=0;i&lt;10000;i++)&#123;</span><br><span class="line"></span><br><span class="line">System.out.println(<span class="string">"当前是："</span>+i);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">long <span class="attribute">endTime</span>=System.currentTimeMillis();</span><br><span class="line"></span><br><span class="line">System.out.println(<span class="string">"当前程序耗时："</span>+（endTime-startTime）+<span class="string">"ms"</span>);</span><br></pre></td></tr></table></figure>
+<p>第二种：以纳秒为单位计算的。</p>
+<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">long startTime</span>=System.nanoTime();</span><br></pre></td></tr></table></figure>
+<p>//下面是一些测试代码</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">long <span class="attribute">startTime</span>=System.nanoTime();</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span>(int <span class="attribute">i</span>=0;i&lt;10000;i++)&#123;</span><br><span class="line"></span><br><span class="line">System.out.println(<span class="string">"当前是："</span>+i);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">long <span class="attribute">endTime</span>=System.nanoTime();</span><br><span class="line"></span><br><span class="line">System.out.println(<span class="string">"当前程序耗时："</span>+（endTime-startTime）+<span class="string">"ns"</span>);</span><br></pre></td></tr></table></figure>
+<p>测试程序如果需要高精确时间，一般会选择第二种，</p>
+<p>测试程序如果需要一般精确时间，一般会选择第一种，</p>
+<p>时间换算：</p>
+<p>1小时=60分钟</p>
+<p>1分钟=60秒</p>
+<p>1秒=1000毫秒</p>
+<p>1毫秒=1000微秒</p>
+<p>1微秒=1000纳秒</p>
+<p>1纳秒=1000皮秒</p>
 
       
 
@@ -263,7 +275,7 @@ src="//music.163.com/outchain/player?type=0&id=67272505&auto=0&height=90"></ifra
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://anshangfan.github.io/2018/03/07/九九乘法表/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://anshangfan.github.io/2018/03/08/Java中计算程序运行耗时的方法对比/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -277,18 +289,9 @@ src="//music.163.com/outchain/player?type=0&id=67272505&auto=0&height=90"></ifra
   
 <nav id="article-nav">
   
-    <a href="/2018/03/08/Java中计算程序运行耗时的方法对比/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Java中计算程序运行耗时的方法比较
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/03/07/用hexo在github上创建博客（mac版）/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">用hexo在github上创建博客（mac版）</div>
+    <a href="/2018/03/07/九九乘法表/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">九九乘法表</div>
       <i class="icon-circle-right"></i>
     </a>
   
