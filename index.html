@@ -149,6 +149,112 @@ src="//music.163.com/outchain/player?type=0&id=67272505&auto=0&height=90"></ifra
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-虚拟机环境配置" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/03/10/虚拟机环境配置/">九九乘法表</a>
+    </h1>
+  
+
+        
+        <a href="/2018/03/10/虚拟机环境配置/" class="archive-article-date">
+  	<time datetime="2018-03-10T15:26:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-10</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>给管理员权限</p>
+<figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">su root</span><br><span class="line"></span><br><span class="line">sudo vi /etc/sudoers</span><br><span class="line"></span><br><span class="line">添加 Hadoop  <span class="keyword">ALL</span>=(<span class="keyword">ALL</span>)            <span class="keyword">ALL</span></span><br></pre></td></tr></table></figure>
+<p>关闭计算机防火墙</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">先用serviceiptables <span class="keyword">stop</span> 暂时关闭</span><br><span class="line"></span><br><span class="line">再用 chkconfigiptables <span class="keyword">off</span> 永久关闭</span><br></pre></td></tr></table></figure>
+<p>查看关于java的安装文件 </p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo rpm  –<span class="keyword">qa</span>|<span class="keyword">grep</span> java</span><br></pre></td></tr></table></figure>
+<p>卸载软件</p>
+<figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo rpm -e <span class="params">--nodeps</span> 文件1 文件2 …<span class="string">..</span></span><br></pre></td></tr></table></figure>
+<p>查看当前目录   pwd</p>
+<p>显示当前目录中的内容 ls</p>
+<p>在opt目录下安装jdk      </p>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Softwares存放上传的软件   sudo <span class="built_in">mkdir</span> softwares</span><br><span class="line">Modules  存放执行的文件</span><br></pre></td></tr></table></figure>
+<p>进入softwares目录，用sudo mv +~/+文件名  + .  将需要的文件移动到当前目录下</p>
+<p>将压缩包解压至 modules文件下 sudo  tar -zxvf  +文件名   -C  ../ modules/</p>
+<p>配置java环境变量</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"> vi./.bash_profile</span><br><span class="line"> </span><br><span class="line"> 进入文件后输入以下内容</span><br><span class="line"><span class="comment"># Java_Configuration</span></span><br><span class="line"><span class="builtin-name">export</span> <span class="attribute">JAVA_HOME</span>=/opt/modules/jdk1.7.0_80</span><br><span class="line"><span class="builtin-name">export</span> <span class="attribute">PATH</span>=PATH:JAVA_HOME/bin</span><br><span class="line"></span><br><span class="line">保存后运行文件</span><br><span class="line">Source  .bash_profile</span><br></pre></td></tr></table></figure>
+<p>SSH免登陆</p>
+<p>​           开启ssh免登陆</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vi <span class="regexp">/etc/</span>ssh<span class="regexp">/sshd_config</span></span><br></pre></td></tr></table></figure>
+<p>​           生成ssh免登陆的公钥和密钥</p>
+<figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen –<span class="built_in">t</span> rsa</span><br></pre></td></tr></table></figure>
+<p>​           查看隐藏文件</p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ls</span>  -<span class="keyword">al</span></span><br></pre></td></tr></table></figure>
+<p>​           保存公钥到authorized_keys文件中</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">catid_rsa.pub <span class="meta">&gt;&gt;</span>authorized_keys</span><br></pre></td></tr></table></figure>
+<p>​           对.ssh目录和authorized_keys进行授权</p>
+<figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">cd</span> <span class="string">.ssh/</span></span><br><span class="line">sudo chmod 600 authorized_keys</span><br><span class="line"><span class="keyword">cd</span> <span class="string">..</span></span><br><span class="line">sudo chmod 750 <span class="string">.ssh</span></span><br></pre></td></tr></table></figure>
+<p>​           设置主机名对应的ip</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo vi <span class="regexp">/etc/</span>hosts</span><br><span class="line">输入</span><br><span class="line">ip地址 主机名</span><br></pre></td></tr></table></figure>
+<p>​           测试</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">ssh</span>  主机名</span><br></pre></td></tr></table></figure>
+<p>更改opt文件下的属主，属组</p>
+<figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">sudo</span> chown –R  hadoop(用户名)：hadoop  /<span class="meta">opt</span></span><br></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">hadoop</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/03/10/虚拟机环境配置/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-辛德勒名单" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -648,6 +754,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">博客</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">hadoop</a>
               </li>
              
               <li class="article-tag-list-item">
