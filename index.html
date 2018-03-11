@@ -176,12 +176,9 @@ src="//music.163.com/outchain/player?type=0&id=67272505&auto=0&height=90"></ifra
 <figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">`npm install hexo-asset-image --save`</span><br></pre></td></tr></table></figure>
 <p>3 等待一小段时间后，再运行</p>
 <figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">`hexo n <span class="string">"xxxx"</span>`</span><br></pre></td></tr></table></figure>
-<p>来生成md博文时，<code>/source/_posts</code>文件夹内除了<code>xxxx.md</code>文件还有一个<strong>同名的文件夹</strong></p>
-<h5 id="second"><a href="#second" class="headerlink" title="second"></a>second</h5><p>在xxxx.md中想引入图片时，先把图片复制到xxxx这个文件夹中，然后只需要在xxxx.md中按照markdown的格式引入图片：</p>
-<p><img src="/2018/03/11/hexo写博文时插入图片/1.png" alt="1"></p>
-<p>注意：</p>
-<p>xxxx是这个md文件的名字，也是同名文件夹的名字。只需要有文件夹名字即可，不需要有什么绝对路径。你想引入的图片就只需要放入xxxx这个文件夹内就好了，很像引用相对路径。</p>
-
+        
+          <a class="article-more-a" href="/2018/03/11/hexo写博文时插入图片/#more">more >></a>
+        
       
 
       
@@ -202,10 +199,6 @@ src="//music.163.com/outchain/player?type=0&id=67272505&auto=0&height=90"></ifra
 
       
 
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/03/11/hexo写博文时插入图片/">展开全文 >></a>
-        </p>
       
 
       
@@ -258,36 +251,9 @@ src="//music.163.com/outchain/player?type=0&id=67272505&auto=0&height=90"></ifra
 <p>三个文件中将JAVA_HOME路径改为/opt/modules/jdk1.7.0_80（你自己的java保存路径）</p>
 <p>core-site.xml在<configuration></configuration>中加入</p>
 <figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="params">&lt;property&gt;</span></span><br><span class="line"></span><br><span class="line">         <span class="params">&lt;name&gt;</span>fs.defaultFS<span class="params">&lt;/name&gt;</span></span><br><span class="line"></span><br><span class="line">         <span class="params">&lt;value&gt;</span>hdfs:<span class="comment">//当前登录的主机名:8020&lt;/value&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="params">&lt;/property&gt;</span></span><br><span class="line"></span><br><span class="line">		<span class="params">&lt;property&gt;</span></span><br><span class="line"></span><br><span class="line">          <span class="params">&lt;name&gt;</span>hadoop.tmp.dir<span class="params">&lt;/name&gt;</span>             </span><br><span class="line"></span><br><span class="line">            <span class="params">&lt;value&gt;</span><span class="meta-keyword">/opt/</span>modules/hadoop<span class="number">-2.6</span><span class="number">.5</span>/tmp<span class="params">&lt;/value&gt;</span></span><br><span class="line"> <span class="params">&lt;/property&gt;</span></span><br></pre></td></tr></table></figure>
-<p>hdfs-site.xml 在<configuration></configuration>中加入</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line"></span><br><span class="line">            <span class="tag">&lt;<span class="name">name</span>&gt;</span>dfs.replication<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line"></span><br><span class="line">			<span class="tag">&lt;<span class="name">value</span>&gt;</span>1<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line"></span><br><span class="line"> <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"> </span><br><span class="line"> <span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line"></span><br><span class="line">         <span class="tag">&lt;<span class="name">name</span>&gt;</span>dfs.namenode.secondary.http-address<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line"></span><br><span class="line">		 <span class="tag">&lt;<span class="name">value</span>&gt;</span>当前登录的主机名:50090<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>mapred-site.xml在<configuration></configuration>中加入</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line"></span><br><span class="line">      <span class="tag">&lt;<span class="name">name</span>&gt;</span>mapreduce.framework.name<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line"></span><br><span class="line">	  <span class="tag">&lt;<span class="name">value</span>&gt;</span>yarn<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line"></span><br><span class="line"> <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>Slaves 中 将localhost改为当前登录的主机名</p>
-<p>yarn-site.xml在<configuration></configuration>中加入</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">name</span>&gt;</span>yarn.nodemanager.aux-services<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line"></span><br><span class="line">	<span class="tag">&lt;<span class="name">value</span>&gt;</span>mapreduce_shuffle<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">   </span><br><span class="line"><span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line"></span><br><span class="line">     <span class="tag">&lt;<span class="name">name</span>&gt;</span>yarn.resourcemanager.hostname<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">value</span>&gt;</span>当前登录的主机名<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>在hadoop-2.6.5 目录下创建tmp文件</p>
-<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> tmp</span><br></pre></td></tr></table></figure>
-<p>在该目录下输入</p>
-<figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">bin/hdfsnamenode </span>–format</span><br></pre></td></tr></table></figure>
-<p>运行成功后输入</p>
-<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sbin/<span class="literal">start</span>-dfs.sh</span><br></pre></td></tr></table></figure>
-<p>运行后输入    jps</p>
-<p>若出现</p>
-<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">Jps</span></span><br><span class="line"></span><br><span class="line"><span class="attribute">Namenode</span></span><br><span class="line"></span><br><span class="line"><span class="attribute">Secondarynamenode</span></span><br><span class="line"></span><br><span class="line"><span class="attribute">Datanode</span></span><br></pre></td></tr></table></figure>
-<p>四个文件即成功</p>
-<p>此时在浏览器中输入 </p>
-<figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">主机地址：<span class="number">50070</span></span><br></pre></td></tr></table></figure>
-<p>是否出现</p>
-<p><img src="/2018/03/10/hadoop集群搭建/1.png" alt="img"></p>
-<p>出现即成功</p>
-<p>在该目录下输入</p>
-<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sbin/<span class="literal">start</span>-yarn.sh</span><br></pre></td></tr></table></figure>
-<p>成功运行后在浏览器中输入 </p>
-<figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">主机地址：<span class="number">8088</span></span><br></pre></td></tr></table></figure>
-<p>出现</p>
-<p><img src="/2018/03/10/hadoop集群搭建/2.png" alt="img"></p>
-<p>就成功</p>
-
+        
+          <a class="article-more-a" href="/2018/03/10/hadoop集群搭建/#more">more >></a>
+        
       
 
       
@@ -308,10 +274,6 @@ src="//music.163.com/outchain/player?type=0&id=67272505&auto=0&height=90"></ifra
 
       
 
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/03/10/hadoop集群搭建/">展开全文 >></a>
-        </p>
       
 
       
@@ -366,34 +328,9 @@ src="//music.163.com/outchain/player?type=0&id=67272505&auto=0&height=90"></ifra
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">先用serviceiptables <span class="keyword">stop</span> 暂时关闭</span><br><span class="line"></span><br><span class="line">再用 chkconfigiptables <span class="keyword">off</span> 永久关闭</span><br></pre></td></tr></table></figure>
 <p>查看关于java的安装文件 </p>
 <figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo rpm  –<span class="keyword">qa</span>|<span class="keyword">grep</span> java</span><br></pre></td></tr></table></figure>
-<p>卸载软件</p>
-<figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo rpm -e <span class="params">--nodeps</span> 文件1 文件2 …<span class="string">..</span></span><br></pre></td></tr></table></figure>
-<p>查看当前目录   pwd</p>
-<p>显示当前目录中的内容 ls</p>
-<p>在opt目录下安装jdk      </p>
-<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Softwares存放上传的软件   sudo <span class="built_in">mkdir</span> softwares</span><br><span class="line">Modules  存放执行的文件</span><br></pre></td></tr></table></figure>
-<p>进入softwares目录，用sudo mv +~/+文件名  + .  将需要的文件移动到当前目录下</p>
-<p>将压缩包解压至 modules文件下 sudo  tar -zxvf  +文件名   -C  ../ modules/</p>
-<p>配置java环境变量</p>
-<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"> vi./.bash_profile</span><br><span class="line"> </span><br><span class="line"> 进入文件后输入以下内容</span><br><span class="line"><span class="comment"># Java_Configuration</span></span><br><span class="line"><span class="builtin-name">export</span> <span class="attribute">JAVA_HOME</span>=/opt/modules/jdk1.7.0_80</span><br><span class="line"><span class="builtin-name">export</span> <span class="attribute">PATH</span>=PATH:JAVA_HOME/bin</span><br><span class="line"></span><br><span class="line">保存后运行文件</span><br><span class="line">Source  .bash_profile</span><br></pre></td></tr></table></figure>
-<p>SSH免登陆</p>
-<p>​           开启ssh免登陆</p>
-<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vi <span class="regexp">/etc/</span>ssh<span class="regexp">/sshd_config</span></span><br></pre></td></tr></table></figure>
-<p>​           生成ssh免登陆的公钥和密钥</p>
-<figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen –<span class="built_in">t</span> rsa</span><br></pre></td></tr></table></figure>
-<p>​           查看隐藏文件</p>
-<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ls</span>  -<span class="keyword">al</span></span><br></pre></td></tr></table></figure>
-<p>​           保存公钥到authorized_keys文件中</p>
-<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">catid_rsa.pub <span class="meta">&gt;&gt;</span>authorized_keys</span><br></pre></td></tr></table></figure>
-<p>​           对.ssh目录和authorized_keys进行授权</p>
-<figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">cd</span> <span class="string">.ssh/</span></span><br><span class="line">sudo chmod 600 authorized_keys</span><br><span class="line"><span class="keyword">cd</span> <span class="string">..</span></span><br><span class="line">sudo chmod 750 <span class="string">.ssh</span></span><br></pre></td></tr></table></figure>
-<p>​           设置主机名对应的ip</p>
-<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo vi <span class="regexp">/etc/</span>hosts</span><br><span class="line">输入</span><br><span class="line">ip地址 主机名</span><br></pre></td></tr></table></figure>
-<p>​           测试</p>
-<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">ssh</span>  主机名</span><br></pre></td></tr></table></figure>
-<p>更改opt文件下的属主，属组</p>
-<figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">sudo</span> chown –R  hadoop(用户名)：hadoop  /<span class="meta">opt</span></span><br></pre></td></tr></table></figure>
-
+        
+          <a class="article-more-a" href="/2018/03/10/虚拟机环境配置/#more">more >></a>
+        
       
 
       
@@ -414,10 +351,6 @@ src="//music.163.com/outchain/player?type=0&id=67272505&auto=0&height=90"></ifra
 
       
 
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/03/10/虚拟机环境配置/">展开全文 >></a>
-        </p>
       
 
       
@@ -466,9 +399,10 @@ src="//music.163.com/outchain/player?type=0&id=67272505&auto=0&height=90"></ifra
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>​    昨天晚上突然很想找部电影看，在网上搜索，最后看到了《辛德勒的名单》。<br>​    初中的时候就听说过这部电影，那是在一节音乐课上，老师给我们放电影里的一段音乐，配着小段电影情节：辛德勒和他的夫人骑着马在高处看着德国人血洗犹太人区，无数人被残忍杀害，还有一些人正排着队往可能安全的范围里走。在队伍外面，一个穿红裙子的小女孩儿自顾自走着，她走过士兵，穿过犹太人群，在血腥和恐惧中径自走着。没有一个士兵发现她，犹太人看到她也没有去打扰她。她走着，红色的衣服使他在灰黑色的背景中那么扎眼。<br>​    我想到了南京大屠杀。日本人到中国，他是作为一个胜利者来的。在那时的日本人眼里，中国人就像是德国兵眼中的犹太人一样，是他们的俘虏，而俘虏，不是人。<br>​    电影中多次出现了“名单”这个词，德国人的名单一出现就意味着又会有一批犹太人被杀死，而他们筛选犹太人的方式是我难以想象的。脱光衣服，男人女人在一起一丝不挂地绕着圈跑，身强体壮的活，老弱病残的死。一些女人为了自己看上去健康一点，就用针扎破手指用鲜血给自己画腮。当被选中留下来时她们拥抱在一起万分庆幸。她们又可以活一阵子了，尽管生不如死，但是“留得青山在，不怕没柴烧”。<br>​    发生在我们国家的南京大屠杀，活埋，杀人比赛，毒气实验，奸淫妇女……何其相似！<br>​    我竟然想，是不是所有的战争都有这样的结局：胜利者耀武扬威，掌握着失败者的生杀大权，掌握着人的尊严；失败者任人宰割，忍气吞声，命贱如畜生？<br>​    可是，战争结果是胜利或失败，怎么会把人性也改变了？是不是可以说，赢为兽，输为畜！那人呢？人性在哪里？<br>​    错的不是我，也不是你，更不是他，错的不是个人，不是国家，错的，是世界，是战争。<br>然而，我又分明从中看到了伟大的鲜明的人性。辛德勒从一心办工厂到竭尽所能保护犹太人，从只知赚钱到付出所有财产救下一千一百个犹太人。这难道不是人性吗？辛德勒最后成为了一个至善的人，直到多年以后仍旧受人尊敬，在电影最后，被拯救的犹太人一个个的在辛德勒的墓前献上敬意，我甚至感动的落了泪。这是人性的光辉，甚至可以说这是人性的至高点。<br>​    那么我们人的善良究竟沒有丧失。</p>
-<p>​    人性。何谓人性？<br>​    善性是人性，那恶性也必然是人性的一面。<br>​    战争之所以错，就是因为他激发了太多的人性之恶，或者，与其说是激发，不如说是释放，是发泄。而这释放这发泄，是多么的可怕。<br>​    以前自己从未想过战争到底有多残酷，国际形式紧张，也并未引起我多大的恐惧，但现在，我祈    祷和平，反对战争。<br>​    愿人性多流露一些善，少需要一些恶。</p>
-
+        <p>​    昨天晚上突然很想找部电影看，在网上搜索，最后看到了《辛德勒的名单》。<br>​    初中的时候就听说过这部电影，那是在一节音乐课上，老师给我们放电影里的一段音乐，配着小段电影情节：辛德勒和他的夫人骑着马在高处看着德国人血洗犹太人区，无数人被残忍杀害，还有一些人正排着队往可能安全的范围里走。在队伍外面，一个穿红裙子的小女孩儿自顾自走着，她走过士兵，穿过犹太人群，在血腥和恐惧中径自走着。没有一个士兵发现她，犹太人看到她也没有去打扰她。她走着，红色的衣服使他在灰黑色的背景中那么扎眼。<br>​    我想到了南京大屠杀。日本人到中国，他是作为一个胜利者来的。在那时的日本人眼里，中国人就像是德国兵眼中的犹太人一样，是他们的俘虏，而俘虏，不是人。<br>​    电影中多次出现了“名单”这个词，德国人的名单一出现就意味着又会有一批犹太人被杀死，而他们筛选犹太人的方式是我难以想象的。脱光衣服，男人女人在一起一丝不挂地绕着圈跑，身强体壮的活，老弱病残的死。一些女人为了自己看上去健康一点，就用针扎破手指用鲜血给自己画腮。当被选中留下来时她们拥抱在一起万分庆幸。她们又可以活一阵子了，尽管生不如死，但是“留得青山在，不怕没柴烧”。<br></p>
+        
+          <a class="article-more-a" href="/2018/03/09/辛德勒名单/#more">more >></a>
+        
       
 
       
@@ -489,10 +423,6 @@ src="//music.163.com/outchain/player?type=0&id=67272505&auto=0&height=90"></ifra
 
       
 
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/03/09/辛德勒名单/">展开全文 >></a>
-        </p>
       
 
       
@@ -546,20 +476,9 @@ src="//music.163.com/outchain/player?type=0&id=67272505&auto=0&height=90"></ifra
 <figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">long startTime</span>=System.currentTimeMillis();</span><br></pre></td></tr></table></figure>
 <p>//下面是一些测试代码</p>
 <figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">long <span class="attribute">startTime</span>=System.currentTimeMillis();</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span>(int <span class="attribute">i</span>=0;i&lt;10000;i++)&#123;</span><br><span class="line"></span><br><span class="line">System.out.println(<span class="string">"当前是："</span>+i);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">long <span class="attribute">endTime</span>=System.currentTimeMillis();</span><br><span class="line"></span><br><span class="line">System.out.println(<span class="string">"当前程序耗时："</span>+（endTime-startTime）+<span class="string">"ms"</span>);</span><br></pre></td></tr></table></figure>
-<p>第二种：以纳秒为单位计算的。</p>
-<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">long startTime</span>=System.nanoTime();</span><br></pre></td></tr></table></figure>
-<p>//下面是一些测试代码</p>
-<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">long <span class="attribute">startTime</span>=System.nanoTime();</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span>(int <span class="attribute">i</span>=0;i&lt;10000;i++)&#123;</span><br><span class="line"></span><br><span class="line">System.out.println(<span class="string">"当前是："</span>+i);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">long <span class="attribute">endTime</span>=System.nanoTime();</span><br><span class="line"></span><br><span class="line">System.out.println(<span class="string">"当前程序耗时："</span>+（endTime-startTime）+<span class="string">"ns"</span>);</span><br></pre></td></tr></table></figure>
-<p>测试程序如果需要高精确时间，一般会选择第二种，</p>
-<p>测试程序如果需要一般精确时间，一般会选择第一种，</p>
-<p>时间换算：</p>
-<p>1小时=60分钟</p>
-<p>1分钟=60秒</p>
-<p>1秒=1000毫秒</p>
-<p>1毫秒=1000微秒</p>
-<p>1微秒=1000纳秒</p>
-<p>1纳秒=1000皮秒</p>
-
+        
+          <a class="article-more-a" href="/2018/03/08/Java中计算程序运行耗时的方法对比/#more">more >></a>
+        
       
 
       
@@ -580,10 +499,6 @@ src="//music.163.com/outchain/player?type=0&id=67272505&auto=0&height=90"></ifra
 
       
 
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/03/08/Java中计算程序运行耗时的方法对比/">展开全文 >></a>
-        </p>
       
 
       
@@ -634,11 +549,9 @@ src="//music.163.com/outchain/player?type=0&id=67272505&auto=0&height=90"></ifra
       
         <p>1.用for循环写</p>
 <figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">multiplication</span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">mian</span> (<span class="params">String args[]</span>)</span>&#123;</span><br><span class="line">          <span class="keyword">for</span>(<span class="keyword">int</span> x=<span class="number">1</span>;x&lt;<span class="number">10</span>;x++) &#123;</span><br><span class="line">				<span class="keyword">for</span>(<span class="keyword">int</span> y=<span class="number">1</span>;y&lt;=x;y++) &#123;</span><br><span class="line">					System.<span class="keyword">out</span>.print(x+<span class="string">"*"</span>+y+<span class="string">"="</span>+(x*y)+<span class="string">"\t"</span>);</span><br><span class="line">					<span class="keyword">if</span> (x==y) &#123;</span><br><span class="line">						System.<span class="keyword">out</span>.println();</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">     &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<p>2.用while循环写</p>
-<figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span>  <span class="title">multiplication</span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span>(<span class="params">String[] args</span>) </span>&#123;</span><br><span class="line">       		 <span class="keyword">int</span> x = <span class="number">0</span>;</span><br><span class="line">		 <span class="keyword">while</span> (++x &lt; <span class="number">10</span>) &#123;</span><br><span class="line">			<span class="keyword">int</span> y = <span class="number">0</span>;</span><br><span class="line">			<span class="keyword">while</span> (++y &lt;= x) &#123;</span><br><span class="line">			System.<span class="keyword">out</span>.print(x + <span class="string">"*"</span> + y + <span class="string">"="</span> + (x*y) + <span class="string">"\t"</span>);</span><br><span class="line">			&#125;</span><br><span class="line">			System.<span class="keyword">out</span>.println();</span><br><span class="line">			&#125;</span><br><span class="line">				</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br></pre></td></tr></table></figure>
-<p>3.用do….while循环写</p>
-<figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">multiplication</span> &#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span>(<span class="params">String[] args</span>) </span>&#123;</span><br><span class="line">     		<span class="keyword">int</span> x=<span class="number">1</span>,y=<span class="number">1</span>;</span><br><span class="line">		   <span class="keyword">do</span>&#123;</span><br><span class="line">		         y=<span class="number">1</span>;</span><br><span class="line">		         System.<span class="keyword">out</span>.println();</span><br><span class="line">		         <span class="keyword">do</span>&#123;</span><br><span class="line">		             System.<span class="keyword">out</span>.print(<span class="string">"  "</span>+y+<span class="string">"*"</span>+x+<span class="string">"="</span>+(x*y));</span><br><span class="line">		             y++;</span><br><span class="line">		            &#125; <span class="keyword">while</span>(y&lt;=x);</span><br><span class="line">		            x++;</span><br><span class="line">		        &#125; <span class="keyword">while</span>(x&lt;<span class="number">10</span>);</span><br><span class="line">				</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br></pre></td></tr></table></figure>
-
+        
+          <a class="article-more-a" href="/2018/03/07/九九乘法表/#more">more >></a>
+        
       
 
       
@@ -659,10 +572,6 @@ src="//music.163.com/outchain/player?type=0&id=67272505&auto=0&height=90"></ifra
 
       
 
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/03/07/九九乘法表/">展开全文 >></a>
-        </p>
       
 
       
@@ -715,12 +624,9 @@ src="//music.163.com/outchain/player?type=0&id=67272505&auto=0&height=90"></ifra
 <p>2.下载安装git<br>    <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">   检查是否成功安装：	</span><br><span class="line">git —-version</span><br></pre></td></tr></table></figure></p>
 <p>3.打开终端 输入 sudu npm install -g hexo  安装hexo<br>    <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">   若失败则用以下语句</span><br><span class="line">sudo npm install --unsafe-perm --verbose -g hexo</span><br></pre></td></tr></table></figure></p>
 <p>4.创建一个文件夹，取名 blog<br>    <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">终端中可输入 mkdir  blog</span><br></pre></td></tr></table></figure></p>
-<p>5.在终端进入文件夹blog目录<br>    <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入 hexo init  初始化博客</span><br><span class="line">输入 hexo s 将给的网址在浏览器中打开，会发现有一个博客框架 ，终端中用ctrl +c退出</span><br></pre></td></tr></table></figure></p>
-<p>6.github配置<br>    <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">​    1.注册github账号，并登陆</span><br><span class="line">​    2.获取本机的ssh口令   在终端输入	</span><br><span class="line">    	git config --global user.name “github用户名” </span><br><span class="line">    	git config --global user.email “github邮箱”</span><br><span class="line">    	ssh-keygen -t rsa -C “github邮箱”</span><br><span class="line">​    3.将生成的id_rsa.pub文件内容复制</span><br><span class="line">​    4.复制的内容添加到github上的ssh内</span><br><span class="line">    5.创建新库</span><br><span class="line">    	将二级域名改为 用户名.github.io格式</span><br></pre></td></tr></table></figure></p>
-<p>7.在blog文件夹下的_config.yml做如下修改<br>    <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">type</span>: git</span><br><span class="line">repository: 写自己库的地址</span><br><span class="line">brach: master</span><br><span class="line">注意： 冒号后面要保留一个空格，不然运行会报错</span><br></pre></td></tr></table></figure></p>
-<p>  8.在终端上传博客<br>        <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1.输入  npm install hexo-deployer-git –save</span><br><span class="line">2.输入  hexo g 生成静态文件		</span><br><span class="line">3.hexo s  启动服务器(本地服务器)通常网址为http://localhost:4000/    可在该网址查看效果</span><br><span class="line">4.hexo d  文件生成 后立即部署网站</span><br></pre></td></tr></table></figure></p>
-<p>至此，一个简单的博客就搭建完成了！</p>
-
+        
+          <a class="article-more-a" href="/2018/03/07/用hexo在github上创建博客（mac版）/#more">more >></a>
+        
       
 
       
@@ -741,10 +647,6 @@ src="//music.163.com/outchain/player?type=0&id=67272505&auto=0&height=90"></ifra
 
       
 
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/03/07/用hexo在github上创建博客（mac版）/">展开全文 >></a>
-        </p>
       
 
       
@@ -797,12 +699,9 @@ src="//music.163.com/outchain/player?type=0&id=67272505&auto=0&height=90"></ifra
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
 <h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
+        
+          <a class="article-more-a" href="/2018/03/07/hello-world/#more">more >></a>
+        
       
 
       
@@ -823,10 +722,6 @@ src="//music.163.com/outchain/player?type=0&id=67272505&auto=0&height=90"></ifra
 
       
 
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/03/07/hello-world/">展开全文 >></a>
-        </p>
       
 
       
