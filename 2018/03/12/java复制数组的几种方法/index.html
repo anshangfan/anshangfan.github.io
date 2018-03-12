@@ -6,19 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://anshangfan.github.io">
-  <title>九九乘法表 | Jason的博客</title>
+  <title>Java复制数组的集中方法 | Jason的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1.用for循环写 123456789101112public class multiplication&amp;#123;    public static void mian (String args[])&amp;#123;          for(int x=1;x&amp;lt;10;x++) &amp;#123;	  for(int y=1;y&amp;lt;=x;y++) &amp;#123;		System.out.print">
+  <meta name="description" content="JAVA语言的下面几种数组复制方法中，哪个效率最高？ A.for循环逐一复制B.System.arraycopyC.System.copyofD.使用clone方法 效率：System.arraycopy &amp;gt; clone &amp;gt; Arrays.copyOf &amp;gt; for循环 1、System.arraycopy的用法： 12345public static void arraycopy">
 <meta name="keywords" content="java">
 <meta property="og:type" content="article">
-<meta property="og:title" content="九九乘法表">
-<meta property="og:url" content="http://anshangfan.github.io/2018/03/07/九九乘法表/index.html">
+<meta property="og:title" content="Java复制数组的集中方法">
+<meta property="og:url" content="http://anshangfan.github.io/2018/03/12/java复制数组的几种方法/index.html">
 <meta property="og:site_name" content="Jason的博客">
-<meta property="og:description" content="1.用for循环写 123456789101112public class multiplication&amp;#123;    public static void mian (String args[])&amp;#123;          for(int x=1;x&amp;lt;10;x++) &amp;#123;	  for(int y=1;y&amp;lt;=x;y++) &amp;#123;		System.out.print">
-<meta property="og:updated_time" content="2018-03-11T14:59:39.000Z">
+<meta property="og:description" content="JAVA语言的下面几种数组复制方法中，哪个效率最高？ A.for循环逐一复制B.System.arraycopyC.System.copyofD.使用clone方法 效率：System.arraycopy &amp;gt; clone &amp;gt; Arrays.copyOf &amp;gt; for循环 1、System.arraycopy的用法： 12345public static void arraycopy">
+<meta property="og:image" content="http://anshangfan.github.io/2018/03/12/java复制数组的几种方法/p1.jpeg">
+<meta property="og:image" content="http://anshangfan.github.io/2018/03/12/java复制数组的几种方法/java复制数组的几种方法p2.jpeg">
+<meta property="og:updated_time" content="2018-03-12T03:19:27.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="九九乘法表">
-<meta name="twitter:description" content="1.用for循环写 123456789101112public class multiplication&amp;#123;    public static void mian (String args[])&amp;#123;          for(int x=1;x&amp;lt;10;x++) &amp;#123;	  for(int y=1;y&amp;lt;=x;y++) &amp;#123;		System.out.print">
+<meta name="twitter:title" content="Java复制数组的集中方法">
+<meta name="twitter:description" content="JAVA语言的下面几种数组复制方法中，哪个效率最高？ A.for循环逐一复制B.System.arraycopyC.System.copyofD.使用clone方法 效率：System.arraycopy &amp;gt; clone &amp;gt; Arrays.copyOf &amp;gt; for循环 1、System.arraycopy的用法： 12345public static void arraycopy">
+<meta name="twitter:image" content="http://anshangfan.github.io/2018/03/12/java复制数组的几种方法/p1.jpeg">
   
     <link rel="alternative" href="/atom.xml" title="Jason的博客" type="application/atom+xml">
   
@@ -153,33 +156,63 @@ src="//music.163.com/outchain/player?type=0&id=67272505&auto=0&height=90"></ifra
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-九九乘法表" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-java复制数组的几种方法" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      九九乘法表
+      Java复制数组的集中方法
     </h1>
   
 
         
-        <a href="/2018/03/07/九九乘法表/" class="archive-article-date">
-  	<time datetime="2018-03-07T03:04:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-07</time>
+        <a href="/2018/03/12/java复制数组的几种方法/" class="archive-article-date">
+  	<time datetime="2018-03-12T03:06:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-12</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>1.用for循环写</p>
-<figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">multiplication</span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">mian</span> (<span class="params">String args[]</span>)</span>&#123;</span><br><span class="line">          <span class="keyword">for</span>(<span class="keyword">int</span> x=<span class="number">1</span>;x&lt;<span class="number">10</span>;x++) &#123;</span><br><span class="line">	  <span class="keyword">for</span>(<span class="keyword">int</span> y=<span class="number">1</span>;y&lt;=x;y++) &#123;</span><br><span class="line">		System.<span class="keyword">out</span>.print(x+<span class="string">"*"</span>+y+<span class="string">"="</span>+(x*y)+<span class="string">"\t"</span>);</span><br><span class="line">			<span class="keyword">if</span> (x==y) &#123;</span><br><span class="line">				System.<span class="keyword">out</span>.println();</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">     &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+        <p>JAVA语言的下面几种数组复制方法中，哪个效率最高？</p>
+<p>A.for循环逐一复制<br>B.System.arraycopy<br>C.System.copyof<br>D.使用clone方法</p>
+<p>效率：System.arraycopy &gt; clone &gt; Arrays.copyOf &gt; for循环</p>
+<p>1、System.arraycopy的用法：</p>
+<figure class="highlight processing"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> arraycopy(<span class="keyword">Object</span> src,</span><br><span class="line">						<span class="built_in">int</span> srcPos,</span><br><span class="line">                        <span class="keyword">Object</span> dest,</span><br><span class="line">                        <span class="built_in">int</span> destPos,</span><br><span class="line">                        <span class="built_in">int</span> length)</span><br></pre></td></tr></table></figure>
 <a id="more"></a>
-<p>2.用while循环写</p>
-<figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span>  <span class="title">multiplication</span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span>(<span class="params">String[] args</span>) </span>&#123;</span><br><span class="line">       		 <span class="keyword">int</span> x = <span class="number">0</span>;</span><br><span class="line">		 <span class="keyword">while</span> (++x &lt; <span class="number">10</span>) &#123;</span><br><span class="line">			<span class="keyword">int</span> y = <span class="number">0</span>;</span><br><span class="line">			<span class="keyword">while</span> (++y &lt;= x) &#123;</span><br><span class="line">			System.<span class="keyword">out</span>.print(x + <span class="string">"*"</span> + y + <span class="string">"="</span> + (x*y) + <span class="string">"\t"</span>);</span><br><span class="line">			&#125;</span><br><span class="line">			System.<span class="keyword">out</span>.println();</span><br><span class="line">			&#125;</span><br><span class="line">				</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br></pre></td></tr></table></figure>
-<p>3.用do….while循环写</p>
-<figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">multiplication</span> &#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span>(<span class="params">String[] args</span>) </span>&#123;</span><br><span class="line">     		<span class="keyword">int</span> x=<span class="number">1</span>,y=<span class="number">1</span>;</span><br><span class="line">		   <span class="keyword">do</span>&#123;</span><br><span class="line">		         y=<span class="number">1</span>;</span><br><span class="line">		         System.<span class="keyword">out</span>.println();</span><br><span class="line">		         <span class="keyword">do</span>&#123;</span><br><span class="line">		             System.<span class="keyword">out</span>.print(<span class="string">"  "</span>+y+<span class="string">"*"</span>+x+<span class="string">"="</span>+(x*y));</span><br><span class="line">		             y++;</span><br><span class="line">		            &#125; <span class="keyword">while</span>(y&lt;=x);</span><br><span class="line">		            x++;</span><br><span class="line">		        &#125; <span class="keyword">while</span>(x&lt;<span class="number">10</span>);</span><br><span class="line">				</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br></pre></td></tr></table></figure>
+<p>参数：</p>
+<p><code>src</code> - 源数组。</p>
+<p><code>srcPos</code> - 源数组中的起始位置。</p>
+<p><code>dest</code> - 目标数组。</p>
+<p><code>destPos</code> - 目标数据中的起始位置。</p>
+<p><code>length</code> - 要复制的数组元素的数量</p>
+<p>应用实例：</p>
+<figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">public class Main&#123;</span><br><span class="line"></span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line"></span><br><span class="line">	 	int[] a1=&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>&#125;;</span><br><span class="line">	 	int[] a2=&#123;<span class="number">11</span>,<span class="number">12</span>,<span class="number">13</span>,<span class="number">14</span>,<span class="number">15</span>,<span class="number">16</span>&#125;;</span><br><span class="line">        </span><br><span class="line">	 	System.arraycopy(a1, <span class="number">2</span>, a2, <span class="number">3</span>, <span class="number">2</span>);</span><br><span class="line">		 System.out.print(<span class="string">"copy后结果："</span>);</span><br><span class="line">		 for(int i=<span class="number">0</span>;i&lt;a2.length;i++)&#123;</span><br><span class="line">		 	System.out.print(a2[i]+<span class="string">" "</span>);	 </span><br><span class="line">	 &#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>运行结果：</p>
+<p><img src="/2018/03/12/java复制数组的几种方法/p1.jpeg" alt="p1"></p>
+<p>2、clone 的用法：</p>
+<p>java.lang.Object类的clone()方法为protected类型，不可直接调用，需要先对要克隆的类进行下列操作：</p>
+<p>首先被克隆的类实现Cloneable接口；然后在该类中覆盖clone()方法，并且在该clone()方法中调用super.clone()；这样，super.clone()便可以调用java.lang.Object类的clone()方法。</p>
+<p>应用实例：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//被克隆的类要实现Cloneable接口</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Cat</span> <span class="keyword">implements</span> <span class="title">Cloneable</span> </span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">	<span class="keyword">private</span> String name;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">int</span> age;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">Cat</span><span class="params">(String name,<span class="keyword">int</span> age)</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.name=name;</span><br><span class="line">		<span class="keyword">this</span>.age=age;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//重写clone()方法</span></span><br><span class="line">	<span class="function"><span class="keyword">protected</span> Object <span class="title">clone</span><span class="params">()</span><span class="keyword">throws</span> CloneNotSupportedException</span>&#123;  </span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">super</span>.clone() ;  </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Clone</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> CloneNotSupportedException </span>&#123;</span><br><span class="line"></span><br><span class="line">		Cat cat1=<span class="keyword">new</span> Cat(<span class="string">"xiaohua"</span>,<span class="number">3</span>);</span><br><span class="line">		System.out.println(cat1);</span><br><span class="line">		<span class="comment">//调用clone方法</span></span><br><span class="line">		Cat cat2=(Cat)cat1.clone();</span><br><span class="line">		System.out.println(cat2);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>3、复制引用和复制对象的区别</p>
+<p>复制引用：是指将某个对象的地址复制，所以复制后的对象副本的地址和源对象相同，这样，当改变副本的某个值后，源对象值也被改变；</p>
+<p>复制对象：是将源对象整个复制，对象副本和源对象的地址并不相同，当改变副本的某个值后，源对象值不会改变；</p>
+<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Cat</span> cat1=new <span class="keyword">Cat</span>(<span class="string">"xiaohua"</span>,3);<span class="comment">//源对象</span></span><br><span class="line">		System.<span class="keyword">out</span>.println(<span class="string">"源对象地址"</span>+cat1);</span><br><span class="line">		<span class="comment">//调用clone方法，复制对象</span></span><br><span class="line">		<span class="keyword">Cat</span> cat2=(<span class="keyword">Cat</span>)cat1.clone();</span><br><span class="line">		<span class="keyword">Cat</span> cat3=(<span class="keyword">Cat</span>)cat1;<span class="comment">//复制引用</span></span><br><span class="line">		System.<span class="keyword">out</span>.println(<span class="string">"复制对象地址："</span>+cat2);</span><br><span class="line">		System.<span class="keyword">out</span>.println(<span class="string">"复制引用地址："</span>+cat3);</span><br></pre></td></tr></table></figure>
+<p>输出结果：</p>
+<p><img src="/2018/03/12/java复制数组的几种方法/java复制数组的几种方法p2.jpeg" alt="p2"></p>
+<p>4、Arrays.copyOf 的用法：</p>
+<p>这个方式必须明确自行新建立一个数组对象。在JDK 6中，<a href="http://www.iteedu.com/plang/java/javadiary/25.php" target="_blank" rel="noopener">Arrays 类别</a> 新增了copyOf()方法，可以直接传回一个新的数组对象，而当中包括复制的内容，例如：</p>
+<figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">import java.util.Arrays;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">ArrayDemo</span> &#123;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span>(<span class="params">String[] args</span>) </span>&#123;</span><br><span class="line"><span class="keyword">int</span>[] arr1 = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;; </span><br><span class="line"><span class="keyword">int</span>[] arr2 = Arrays.copyOf(arr1, arr1.length);</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; arr2.length; i++) </span><br><span class="line">System.<span class="keyword">out</span>.print(arr2[i] + <span class="string">" "</span>); </span><br><span class="line">System.<span class="keyword">out</span>.println();</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>执行结果：</p>
+<figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">1 </span><span class="number">2</span> <span class="number">3</span> <span class="number">4</span> <span class="number">5</span></span><br></pre></td></tr></table></figure>
+<p>Arrays的copyOf()方法传回的数组是新的数组对象，所以您改变传回数组中的元素值，也不会影响原来的数组。</p>
+<p>copyOf()的第二个自变量指定要建立的新数组长度，如果新数组的长度超过原数组的长度，则保留数组默认值，例如：</p>
+<figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">import java.util.Arrays;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">ArrayDemo</span> &#123;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span>(<span class="params">String[] args</span>) </span>&#123;</span><br><span class="line"><span class="keyword">int</span>[] arr1 = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;; </span><br><span class="line"><span class="keyword">int</span>[] arr2 = Arrays.copyOf(arr1, <span class="number">10</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; arr2.length; i++) </span><br><span class="line">System.<span class="keyword">out</span>.print(arr2[i] + <span class="string">" "</span>); </span><br><span class="line">System.<span class="keyword">out</span>.println();</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>执行结果：</p>
+<figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">1 </span><span class="number">2</span> <span class="number">3</span> <span class="number">4</span> <span class="number">5</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span></span><br></pre></td></tr></table></figure>
 
       
 
@@ -280,7 +313,7 @@ src="//music.163.com/outchain/player?type=0&id=67272505&auto=0&height=90"></ifra
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://anshangfan.github.io/2018/03/07/九九乘法表/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://anshangfan.github.io/2018/03/12/java复制数组的几种方法/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -294,18 +327,9 @@ src="//music.163.com/outchain/player?type=0&id=67272505&auto=0&height=90"></ifra
   
 <nav id="article-nav">
   
-    <a href="/2018/03/08/Java中计算程序运行耗时的方法对比/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Java中计算程序运行耗时的方法比较
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/03/07/用hexo在github上创建博客（mac版）/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">用hexo在github上创建博客（mac版）</div>
+    <a href="/2018/03/11/hexo写博文时插入图片/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">hexo写博文时插入图片</div>
       <i class="icon-circle-right"></i>
     </a>
   
