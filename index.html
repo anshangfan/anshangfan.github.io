@@ -178,127 +178,9 @@ src="//music.163.com/outchain/player?type=0&id=67272505&auto=0&height=90"></ifra
 <figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mysql -uroot -<span class="selector-tag">p</span> -hXXX<span class="selector-class">.XXX</span><span class="selector-class">.XX</span><span class="selector-class">.XXX</span> -p3306</span><br><span class="line">登陆指定ip的数据库服务器,端口号是<span class="number">3306</span>， 若端口是<span class="number">3306</span>，后面的-p3306可以不写</span><br></pre></td></tr></table></figure>
 <p>查看数据库</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">show</span> <span class="keyword">databases</span>；</span><br><span class="line"><span class="keyword">show</span> schemas；</span><br></pre></td></tr></table></figure>
-<p>进入数据库</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">use</span> 数据库名称;</span><br></pre></td></tr></table></figure>
-<p>查看数据表</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">show</span> <span class="keyword">tables</span>;</span><br></pre></td></tr></table></figure>
-<p>退出客户端</p>
-<figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">quit<span class="comment">;</span></span><br><span class="line">\q</span><br></pre></td></tr></table></figure>
-<h3 id="mysql用户"><a href="#mysql用户" class="headerlink" title="mysql用户"></a>mysql用户</h3><p>mysql用户用 用户名@网络地址 来标识<br>例如 ‘root‘@’localhost’<br>     ‘root‘@’192.168.122.8’<br>     ‘root‘@’192.168.122.%’任意102.168.122网段的用户都可以访问<br>     ‘root‘@’%’任意用户可登陆<br>用户授权:</p>
-<p>可以设置一个用户访问数据库的权限,比如允许访问哪些库,哪些表,哪些字段</p>
-<p>让root用户可以在远程连接,需要两步:</p>
-<p>​    1.创建用户        </p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">user</span>  <span class="string">'abc'</span>@<span class="string">'localhost'</span></span><br><span class="line"></span><br><span class="line">		<span class="keyword">identified</span> <span class="keyword">by</span> <span class="string">'123456'</span></span><br><span class="line"></span><br><span class="line">		创建一个叫abc的本地用户, 用<span class="number">123456</span> 的密码登陆</span><br><span class="line"></span><br><span class="line">		<span class="keyword">create</span> <span class="keyword">user</span></span><br><span class="line"></span><br><span class="line">		<span class="string">'abc'</span>@<span class="string">'192.168.111.2'</span></span><br><span class="line"></span><br><span class="line">		<span class="keyword">identified</span> <span class="keyword">by</span> <span class="string">''</span></span><br><span class="line"></span><br><span class="line">		创建一个abc用户,在<span class="number">192.168</span><span class="number">.111</span><span class="number">.2</span>网端登陆,无密码登陆</span><br></pre></td></tr></table></figure>
-<p>​    2.对用户授权        </p>
-<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">grant    all  授予所有权限</span><br><span class="line"><span class="keyword">on</span>  *.*  <span class="keyword">to</span>  用户名</span><br></pre></td></tr></table></figure>
-<h3 id="中文问题"><a href="#中文问题" class="headerlink" title="中文问题"></a>中文问题</h3><p>数据库储存的字符编码,与客户端字符编码可能不一致</p>
-<figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">GBK 国标码   一篇文章,只用中文</span><br><span class="line"></span><br><span class="line">	中文字符   占两个字节</span><br><span class="line"></span><br><span class="line">UTF<span class="number">-8</span> 支持全球范围所有编码  若要在一篇文章显示很多国家文字,则可以用utf<span class="number">-8</span></span><br><span class="line"></span><br><span class="line">	中文字符	    占三个字节</span><br></pre></td></tr></table></figure>
-<p>服务器要做正确的编码转换,就必须知道客户端发送的是什么编码</p>
-<p>windows 字符行的字符编码就是gbk编码</p>
-<figure class="highlight gams"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">通知服务器,客户端的编码是gbk</span><br><span class="line"><span class="keyword">set</span> names <span class="comment">gbk</span>;</span><br></pre></td></tr></table></figure>
-<h3 id="数据库的管理"><a href="#数据库的管理" class="headerlink" title="数据库的管理"></a>数据库的管理</h3><p>创建数据库</p>
-<figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">create database 数据库名称<span class="comment">;</span></span><br><span class="line"><span class="attribute">charset</span>=utf-<span class="number">8</span><span class="comment">; 指定utf-8编码,用于保存中文数据,防止乱码</span></span><br></pre></td></tr></table></figure>
-<p>查看数据库</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">方法一:</span><br><span class="line"><span class="keyword">show</span> <span class="keyword">databases</span>;</span><br><span class="line">方法二:</span><br><span class="line"><span class="keyword">show</span> <span class="keyword">create</span> <span class="keyword">database</span> 数据库名\G   查看某个数据库创建的<span class="keyword">sql</span>语句</span><br></pre></td></tr></table></figure>
-<p>;和\G结尾的区别</p>
-<p>设有a ,b 两字段</p>
-<p>a:1,2</p>
-<p>b:3,4</p>
-<p>;结尾显示</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">a</span>		<span class="string">b</span></span><br><span class="line"><span class="bullet">-</span><span class="bullet">--</span>		<span class="meta">---</span></span><br><span class="line"><span class="number">1</span>		<span class="number">3</span></span><br><span class="line"><span class="number">2</span>		<span class="number">4</span></span><br></pre></td></tr></table></figure>
-<p>\G结尾</p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="strong">*****</span><span class="strong">*****</span>1<span class="strong">*****</span><span class="strong">*****</span>**</span><br><span class="line">a:1		b:3</span><br><span class="line"><span class="strong">*****</span><span class="strong">*****</span>2<span class="strong">*****</span><span class="strong">*****</span>**</span><br><span class="line">a:2		b:4</span><br></pre></td></tr></table></figure>
-<p>修改数据库</p>
-<p>只能修改数据库的默认字节编码</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">alter</span>  <span class="keyword">database</span> 数据库名;</span><br><span class="line">charset gbk;</span><br><span class="line"><span class="keyword">show</span> <span class="keyword">create</span> <span class="keyword">database</span> 数据库名\G</span><br></pre></td></tr></table></figure>
-<p>删除数据库</p>
-<p>所有的表、数据都会被删除,不可恢复</p>
-<figure class="highlight n1ql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">drop</span> <span class="keyword">database</span> 数据库名;</span><br></pre></td></tr></table></figure>
-<h3 id="表的操作"><a href="#表的操作" class="headerlink" title="表的操作"></a>表的操作</h3><h4 id="创建表"><a href="#创建表" class="headerlink" title="创建表"></a>创建表</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> 表名(</span><br><span class="line">列名  数据类型,  //列名之间加 , 隔开   primary <span class="keyword">key</span> 主键   <span class="keyword">not</span> <span class="literal">null</span> 非空  auto_increment自增 foreign <span class="keyword">key</span> (列名) <span class="keyword">references</span> UserTable(列名)  外键</span><br><span class="line">)<span class="keyword">charset</span>=utf<span class="number">-8</span>;engine=innodb;</span><br></pre></td></tr></table></figure>
-<p>较为常用的engine存储引擎  innodb  (默认引擎)  、myisam</p>
-<h4 id="修改表"><a href="#修改表" class="headerlink" title="修改表"></a>修改表</h4><p>改表名</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">rename</span> <span class="keyword">table</span> 原表名 <span class="keyword">to</span> 想要改的名字;</span><br></pre></td></tr></table></figure>
-<p>改表属性</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">修改存储引擎:</span><br><span class="line">	<span class="keyword">alter</span> <span class="keyword">table</span> 表名 </span><br><span class="line">	<span class="keyword">engine</span>=myisam;</span><br><span class="line">修改字符编码:</span><br><span class="line">	<span class="keyword">alter</span> <span class="keyword">table</span> 表名</span><br><span class="line">	<span class="keyword">charset</span>=utf<span class="number">-8</span>;</span><br></pre></td></tr></table></figure>
-<p>添加字段</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> 表名 <span class="keyword">add</span> 列名 数据类型 <span class="keyword">first</span>(把这列放在最前面)</span><br></pre></td></tr></table></figure>
-<p>改字段名</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> 表名</span><br><span class="line"><span class="keyword">change</span> 原列名 现在要改的  数据类型 ;</span><br></pre></td></tr></table></figure>
-<p>改字段类型</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> 表名</span><br><span class="line"><span class="keyword">modify</span> 列名 原数据类型 想改的数据类型	;</span><br></pre></td></tr></table></figure>
-<p>改字段顺序</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> 表名</span><br><span class="line"><span class="keyword">modify</span> 列名 <span class="keyword">after</span>/<span class="keyword">first</span> 列名;</span><br></pre></td></tr></table></figure>
-<p>删除字段</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">删除字段所有的数据也会被删除,不可恢复</span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> 表名</span><br><span class="line"><span class="keyword">drop</span> <span class="keyword">column</span> 列名;</span><br></pre></td></tr></table></figure>
-<h4 id="查看表"><a href="#查看表" class="headerlink" title="查看表"></a>查看表</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">方法一:</span><br><span class="line"><span class="keyword">show</span> <span class="keyword">tables</span>;</span><br><span class="line">方法二:</span><br><span class="line">desc 表名;  //查看表结构</span><br><span class="line">方法三:</span><br><span class="line"><span class="keyword">show</span> <span class="keyword">create</span> <span class="keyword">table</span> 表名\G</span><br></pre></td></tr></table></figure>
-<h4 id="删除表"><a href="#删除表" class="headerlink" title="删除表"></a>删除表</h4><p>会删除表中所有数据,不可恢复</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">drop</span> <span class="keyword">table</span> <span class="keyword">if</span> <span class="keyword">exists</span> 表名;</span><br></pre></td></tr></table></figure>
-<h4 id="截断表"><a href="#截断表" class="headerlink" title="截断表"></a>截断表</h4><p>按照原结构删除表并重新创建,两步合成一步执行</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">truncate</span> <span class="keyword">table</span> 表名;</span><br></pre></td></tr></table></figure>
-<h3 id="SQL语句"><a href="#SQL语句" class="headerlink" title="SQL语句"></a>SQL语句</h3><p>结构化的查询语言(Structured Query Language)</p>
-<h4 id="DDL"><a href="#DDL" class="headerlink" title="DDL"></a>DDL</h4><p>​    数据定义语言</p>
-<p>​        建库建表</p>
-<h4 id="DML"><a href="#DML" class="headerlink" title="DML"></a>DML</h4><p>​    数据操作语言</p>
-<p>​        增删改</p>
-<h4 id="DQL"><a href="#DQL" class="headerlink" title="DQL"></a>DQL</h4><p>​    数据查询语言</p>
-<p>​        select</p>
-<h3 id="insert-插入数据"><a href="#insert-插入数据" class="headerlink" title="insert 插入数据"></a>insert 插入数据</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">use</span> 数据库名;</span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> 表名(</span><br><span class="line">	<span class="keyword">id</span> <span class="built_in">int</span>,</span><br><span class="line">	<span class="keyword">name</span> <span class="built_in">varchar</span>(<span class="number">20</span>)</span><br><span class="line">)<span class="keyword">engine</span>=<span class="keyword">innodb</span> <span class="keyword">charset</span>=utf<span class="number">-8</span>;   //创建表</span><br><span class="line"><span class="keyword">set</span> <span class="keyword">names</span> gbk;//通知服务器,客户端使用的是什么编码</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> 表名 <span class="keyword">values</span>(<span class="number">1</span>,<span class="string">'张三'</span>);</span><br><span class="line">也可以插入多条数据</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> 表名 <span class="keyword">values</span>(<span class="number">2</span>,<span class="string">'李四'</span>),(<span class="number">3</span>,<span class="string">'王五'</span>),(<span class="number">4</span>,<span class="string">'赵六'</span>);</span><br></pre></td></tr></table></figure>
-<h3 id="update-修改数据"><a href="#update-修改数据" class="headerlink" title="update 修改数据"></a>update 修改数据</h3><figure class="highlight gams"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">update 表名 <span class="keyword">set</span> 列名=  ,列名=  where 列名<span class="comment">=</span>  ;<span class="comment">//不写where的话所有数据都被更改</span></span><br></pre></td></tr></table></figure>
-<h3 id="delete-删除数据"><a href="#delete-删除数据" class="headerlink" title="delete  删除数据"></a>delete  删除数据</h3><figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">delect <span class="keyword">from</span> 表名 <span class="keyword">where</span> 列名=   ;<span class="comment">//不加where删除这个表内所有数据</span></span><br></pre></td></tr></table></figure>
-<h3 id="select-查询数据"><a href="#select-查询数据" class="headerlink" title="select 查询数据"></a>select 查询数据</h3><figure class="highlight n1ql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> 表名; 查询这个表内所有数据</span><br><span class="line"><span class="keyword">select</span> 列名 <span class="keyword">from</span> 表名;查询这个表内 这个列的所有数据</span><br></pre></td></tr></table></figure>
-<h3 id="技术术语"><a href="#技术术语" class="headerlink" title="技术术语"></a>技术术语</h3><p>database   mysql中的数据库</p>
-<p>schema       mysql中的数据库</p>
-<p>table        表</p>
-<p>row            一行数据</p>
-<p>record        一行记录(数据)</p>
-<p>column        一列数据</p>
-<p>field         一列字段(数据)</p>
-<h3 id="存储引擎"><a href="#存储引擎" class="headerlink" title="存储引擎"></a>存储引擎</h3><h3 id="innodb-默认的"><a href="#innodb-默认的" class="headerlink" title="innodb (默认的)"></a>innodb (默认的)</h3><p>​        支持事物</p>
-<p>​        支持外键</p>
-<p>​        支持行级锁     两个客户端同时连接数据库,你若在修改某条数据时,另一人无法访问这条数据</p>
-<p>​        有较多修改操作的表</p>
-<h3 id="myisam"><a href="#myisam" class="headerlink" title="myisam"></a>myisam</h3><p>​        不支持事物</p>
-<p>​        不支持外键</p>
-<p>​        只有表级锁      操作一行数据的时候,锁定整张表,其他人无法访问这张表</p>
-<p>​        大量查询,很少修改的表,可以使用myisam ,这样查询效率更高</p>
-<h3 id="memory"><a href="#memory" class="headerlink" title="memory"></a>memory</h3><p>​        内存表</p>
-<p>​        数据库重启,数据全部丢失,无法保存到磁盘</p>
-<h3 id="定长字符串"><a href="#定长字符串" class="headerlink" title="定长字符串"></a>定长字符串</h3><h4 id="char-20"><a href="#char-20" class="headerlink" title="char(20)"></a>char(20)</h4><figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">定长<span class="number">20</span>个字符</span><br><span class="line"></span><br><span class="line">	不足<span class="number">20</span>个字符,补空格</span><br><span class="line"></span><br><span class="line">	超过<span class="number">20</span>个字符,可能出错或截断</span><br><span class="line"></span><br><span class="line">	最大长度,不能超过<span class="number">255</span>个字符</span><br><span class="line"></span><br><span class="line">	所有该字段的字符串数据,都是连续存储</span><br></pre></td></tr></table></figure>
-<h4 id="varchar-20"><a href="#varchar-20" class="headerlink" title="varchar(20)"></a>varchar(20)</h4><figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">变长字符串</span><br><span class="line">	最长不能超过<span class="number">20</span>个字符</span><br><span class="line">	不足<span class="number">20</span>个字符,直接存储</span><br><span class="line">	超出<span class="number">20</span>个字符,可能出错或截断</span><br><span class="line">存储的最大字节量,不能超过<span class="number">65535</span></span><br><span class="line">	设置成GBK编码的话,字符数为<span class="number">65525</span>/<span class="number">2</span> 有余数舍弃</span><br><span class="line">	设置成utf<span class="number">-8</span>编码的话,字符数为<span class="number">65535</span>/<span class="number">3</span></span><br><span class="line">字节量&lt;=<span class="number">255</span>,需要一个额外的字节,表示字符串的字节长度</span><br><span class="line">字节量&gt;<span class="number">255</span>,需要两个额外字节,表示字符串的字节长度</span><br></pre></td></tr></table></figure>
-<h4 id="char-和-varchar"><a href="#char-和-varchar" class="headerlink" title="char 和 varchar"></a>char 和 varchar</h4><p>​     char类型效率更高,定长字符串尽量使用char类型</p>
-<h4 id="text"><a href="#text" class="headerlink" title="text"></a>text</h4><p>​    最大存储65535字节的字符串</p>
-<p>​    一般存储长的文本使用text</p>
-<h3 id="数字"><a href="#数字" class="headerlink" title="数字"></a>数字</h3><h4 id="整数类型"><a href="#整数类型" class="headerlink" title="整数类型"></a>整数类型</h4><h5 id="tinyint"><a href="#tinyint" class="headerlink" title="tinyint"></a>tinyint</h5><p>​            1字节        -128-127</p>
-<h5 id="smallint"><a href="#smallint" class="headerlink" title="smallint"></a>smallint</h5><p>​            2字节</p>
-<h5 id="int"><a href="#int" class="headerlink" title="int"></a>int</h5><p>​            4字节</p>
-<p>​            int(3)   3表示位数</p>
-<h5 id="bigint"><a href="#bigint" class="headerlink" title="bigint"></a>bigint</h5><p>​            8字节</p>
-<h4 id="浮点类型"><a href="#浮点类型" class="headerlink" title="浮点类型"></a>浮点类型</h4><h5 id="float"><a href="#float" class="headerlink" title="float"></a>float</h5><p>​            4字节  精度低</p>
-<h5 id="double"><a href="#double" class="headerlink" title="double"></a>double</h5><p>​            8字节   精度高</p>
-<h4 id="定点数"><a href="#定点数" class="headerlink" title="定点数"></a>定点数</h4><h5 id="decimal"><a href="#decimal" class="headerlink" title="decimal"></a>decimal</h5><p>​            使用的时候是decimal(m,n)</p>
-<p>​            一共m位,小数位n位</p>
-<p>​    浮点数运算可能会产生不精确的结果</p>
-<p>​    表示金额一般使用decimal</p>
-<p>unsigned  无符号,只有正数</p>
-<p>zerofill</p>
-<p>​    用0填充配合int(6)格式设置使用</p>
-<p>​        1234—–&gt; 001234</p>
-<p>​        12 ——&gt; 000012</p>
-<h3 id="日期"><a href="#日期" class="headerlink" title="日期"></a>日期</h3><h4 id="datetime"><a href="#datetime" class="headerlink" title="datetime"></a>datetime</h4><p>​                年月日时分秒</p>
-<p>​                时间范围</p>
-<p>​                9999年12月31</p>
-<h4 id="data"><a href="#data" class="headerlink" title="data"></a>data</h4><p>​                年月日</p>
-<h4 id="time"><a href="#time" class="headerlink" title="time"></a>time</h4><p>​                时分秒</p>
-<h4 id="timestamp"><a href="#timestamp" class="headerlink" title="timestamp"></a>timestamp</h4><p>​                年月日时分秒</p>
-<p>​                时间戳</p>
-<p>​                    修改一行数据时,第一个timestamp字段,会    自动更新成成系统当前时间</p>
-<p>​                    时间范围</p>
-<p>​                        最大只能到2037年</p>
-<p>​    不足20个字符,补空格</p>
-<p>​    超过20个字符,可能出错或截断</p>
-<p>​    最大长度,不能超过255个字符</p>
-<p>​    所有该字段的字符串数据,都是连续存储</p>
-
+        
+          <a class="article-more-a" href="/2018/03/14/mysql基本操作/#more">more >></a>
+        
       
 
       
@@ -1149,10 +1031,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">博客</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">java</a>
               </li>
              
@@ -1161,11 +1039,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+                <a href="javascript:void(0)" class="js-tag color3">博客</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">mysql</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
             
             <div class="clearfix"></div>
