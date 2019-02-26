@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://anshangfan.github.io">
-  <title>Hello World | Jason的博客</title>
+  <title>Java生成随机数的几种方法 | Jason的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
-<meta name="keywords" content="博客">
+  <meta name="description" content="生成指定范围内的随机数这个是最常用的技术之一，程序员希望通过随机数的方式来处理众多的业务逻辑，测试过程中也希望通过随机数的方式生成包含大量数字的测试用例。 问题往往类似于： 如何随机生成 1~100 之间的随机数，取值包含边界值 1 和 100。 或者是： 如何随机生成随机的3位整数？ 等等……">
+<meta name="keywords" content="java">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://anshangfan.github.io/2018/03/07/hello-world/index.html">
+<meta property="og:title" content="Java生成随机数的几种方法">
+<meta property="og:url" content="http://anshangfan.github.io/2019/02/26/生成随机数/index.html">
 <meta property="og:site_name" content="Jason的博客">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
-<meta property="og:updated_time" content="2018-03-11T03:38:59.000Z">
+<meta property="og:description" content="生成指定范围内的随机数这个是最常用的技术之一，程序员希望通过随机数的方式来处理众多的业务逻辑，测试过程中也希望通过随机数的方式生成包含大量数字的测试用例。 问题往往类似于： 如何随机生成 1~100 之间的随机数，取值包含边界值 1 和 100。 或者是： 如何随机生成随机的3位整数？ 等等……">
+<meta property="og:updated_time" content="2019-02-26T03:04:59.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="twitter:title" content="Java生成随机数的几种方法">
+<meta name="twitter:description" content="生成指定范围内的随机数这个是最常用的技术之一，程序员希望通过随机数的方式来处理众多的业务逻辑，测试过程中也希望通过随机数的方式生成包含大量数字的测试用例。 问题往往类似于： 如何随机生成 1~100 之间的随机数，取值包含边界值 1 和 100。 或者是： 如何随机生成随机的3位整数？ 等等……">
   
     <link rel="alternative" href="/atom.xml" title="Jason的博客" type="application/atom+xml">
   
@@ -149,36 +149,64 @@ src="//music.163.com/outchain/player?type=0&id=67272505&auto=0&height=90"></ifra
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-hello-world" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-生成随机数" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Hello World
+      Java生成随机数的几种方法
     </h1>
   
 
         
-        <a href="/2018/03/07/hello-world/" class="archive-article-date">
-  	<time datetime="2018-03-06T16:36:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-07</time>
+        <a href="/2019/02/26/生成随机数/" class="archive-article-date">
+  	<time datetime="2019-02-25T19:45:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-26</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+        <p>生成指定范围内的随机数这个是最常用的技术之一，程序员希望通过随机数的方式来处理众多的业务逻辑，测试过程中也希望通过随机数的方式生成包含大量数字的测试用例。</p>
+<p>问题往往类似于：</p>
+<p>如何随机生成 1~100 之间的随机数，取值包含边界值 1 和 100。</p>
+<p>或者是：</p>
+<p>如何随机生成随机的3位整数？</p>
+<p>等等……</p>
 <a id="more"></a>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+<p>以 Java 语言为例，我们观察其 Random 对象的 nextInt(int) 方法，发现这个方法将生成 0 ~ 参数之间随机取值的整数。例如（假设先有 Random rand = newRandom();，下同）：</p>
+<figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rand.nextInt(<span class="number">100</span>)<span class="comment">;</span></span><br></pre></td></tr></table></figure>
+<p>这行代码将生成范围0~100 之间的随机数，有趣的是，取值可能为 0 ，但不可能为 100。我们用中学数学课学习的区间表示法，表示为：[0, 100)。</p>
+<p>那么如果要获得区间 [1~100]的随机数，该怎么办呢？稍微动动脑筋就可以想到：区间 [0, 100) 内的整数，实际上就是区间 [0, 99]。因为最大边界为100，可惜不能等于100，因此最大可能产生的“整数”就是99。</p>
+<p>既然rand.nextInt(100) 获得的值是区间 [0, 99]，那么在这个区间左右各加 1，就得到了区间 [1, 100]。因此，代码写成：</p>
+<figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rand.nextInt(<span class="number">100</span>)+ <span class="number">1</span>;</span><br></pre></td></tr></table></figure>
+<p>即可。运行下面的代码，将获得 [1, 100] 的 10 个取值。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Random; </span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> &#123;</span> </span><br><span class="line">  	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">     	Random rand = <span class="keyword">new</span> Random(); </span><br><span class="line">     	 <span class="keyword">for</span> ( <span class="keyword">int</span> i= <span class="number">0</span> ; i&lt; <span class="number">10</span> ; i++) &#123; 			  				System.out.println(rand.nextInt(<span class="number">100</span>) + <span class="number">1</span>); </span><br><span class="line">     	 	&#125; </span><br><span class="line">     	 &#125;</span><br><span class="line">     &#125;</span><br></pre></td></tr></table></figure>
+<p>同理，很容易知道如果要获得随机两位整数，代码写成：rand.nextInt(90) + 10;</p>
+<p>你一定很惊讶，为什么是这么写出来的。其实，在 nextInt() 方法中作为参数的数字 90 表示：你希望生成的随机数的所有取值的可能性的数量（在本命题中，两位整数取值为 [10, 99]，共90个数）；加好后面的数字 10 ，表示区间的最小取值。</p>
+<p>你可以验证下，按照这样理解，[1, 100] 的随机数，是不是应该写成rand.nextInt(100) + 1 。千万不要把参数 100 理解为最大取值。只是区间 [1, 100] 正好从 1 开始，所以最大取值和取值可能性数量正好同为 100。</p>
+<p>因此，</p>
+<p>生成随机三位数的代码为：</p>
+<figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rand.nextInt(<span class="number">900</span>)+ <span class="number">100</span>;</span><br></pre></td></tr></table></figure>
+<p>生成区间 [64,128] 中随机值的代码为：</p>
+<figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rand.nextInt(<span class="number">65</span>)+ <span class="number">64</span>;</span><br></pre></td></tr></table></figure>
+<p>取值可能性的数量是如何计算出来的呢？当然是 最大取值-最小取值+1 ，所以，有最终公式如下：</p>
+<p>// For Java</p>
+<p>int randNumber =rand.nextInt(MAX - MIN + 1) + MIN; // randNumber 将被赋值为一个 MIN 和 MAX 范围内的随机数</p>
+<p>下面分享一个网上常用的函数</p>
+<p>函数一、要生成在[min,max]之间的随机整数</p>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Random;</span><br><span class="line"><span class="keyword">public</span> class RandomTest &#123;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> main(<span class="keyword">String</span>[] args) &#123;</span><br><span class="line">     	<span class="keyword">int</span> <span class="built_in">max</span>= <span class="number">20</span> ;</span><br><span class="line">        <span class="keyword">int</span> <span class="built_in">min</span>= <span class="number">10</span> ;</span><br><span class="line">        Random <span class="built_in">random</span> = <span class="keyword">new</span> Random();</span><br><span class="line">        <span class="keyword">int</span> s = <span class="built_in">random</span>.nextInt(<span class="built_in">max</span>)%(<span class="built_in">max</span>-<span class="built_in">min</span> + <span class="number">1</span>) + <span class="built_in">min</span>;        		System.out.<span class="built_in">println</span>(s);</span><br><span class="line">    	&#125;</span><br><span class="line">  	&#125;</span><br></pre></td></tr></table></figure>
+<p>random.nextInt(max)表示生成[0,max]之间的随机数，然后对(max-min+1)取模。</p>
+<p>以生成[10,20]随机数为例，首先生成0-20的随机数，然后对(20-10+1)取模得到[0-10]之间的随机数，然后加上min=10，最后生成的是10-20的随机数</p>
+<p>函数二、</p>
+<figure class="highlight processing"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.*;</span><br><span class="line"><span class="keyword">import</span> java.io.*;</span><br><span class="line"><span class="keyword">public</span> class Random_Different &#123;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> main(<span class="keyword">String</span>[] args)  <span class="keyword">throws</span> IOException&#123;</span><br><span class="line"> 	System.out.<span class="built_in">print</span>( <span class="string">"输入产生的随机数范围，1到N，N="</span>);       	  <span class="built_in">int</span> n= <span class="number">0</span> ;</span><br><span class="line"> 	<span class="keyword">try</span> &#123;</span><br><span class="line"> 		n=Integer.parseInt( <span class="keyword">new</span> <span class="keyword">BufferedReader</span>( <span class="keyword">new</span>  InputStreamReader(System.in)).readLine());       </span><br><span class="line"> 		&#125; <span class="keyword">catch</span> (Exception e)&#123;             	 	  		 		System.out.<span class="built_in">println</span>(<span class="string">"N必须为正整数"</span>);            </span><br><span class="line"> 		<span class="keyword">return</span>;</span><br><span class="line"> 		&#125;</span><br><span class="line"> 		<span class="keyword">if</span>(n&lt; <span class="number">1</span> )&#123;</span><br><span class="line"> 			System.out.<span class="built_in">println</span>( <span class="string">"N必须为正数"</span>);</span><br><span class="line"> 				<span class="keyword">return</span>;</span><br><span class="line"> 				&#125;</span><br><span class="line">       <span class="built_in">int</span> randArr[]= <span class="keyword">new</span> <span class="built_in">int</span> [n];</span><br><span class="line">       <span class="built_in">int</span> i= <span class="number">0</span> ;</span><br><span class="line">       <span class="keyword">while</span> (i&lt;n)&#123;</span><br><span class="line">       		<span class="built_in">int</span> rand=(<span class="keyword">new</span> Random().nextInt(n)+ <span class="number">1</span> );</span><br><span class="line">            <span class="built_in">boolean</span> isRandExist= <span class="keyword">false</span> ;</span><br><span class="line">           	<span class="keyword">for</span> (<span class="built_in">int</span> j=<span class="number">0</span>;j&lt;randArr.length;j++)&#123;</span><br><span class="line">            <span class="keyword">if</span> (randArr[j]==rand)&#123;</span><br><span class="line">            	isRandExist= <span class="keyword">true</span>;</span><br><span class="line">            	<span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">              &#125;</span><br><span class="line">         <span class="keyword">if</span> (isRandExist==<span class="keyword">false</span> )&#123;</span><br><span class="line">           randArr[i]=rand;</span><br><span class="line">           i++;</span><br><span class="line">           &#125;</span><br><span class="line">         &#125;        				        System.out.<span class="built_in">println</span>(Arrays.toString(randArr));</span><br><span class="line">       &#125;</span><br><span class="line">     &#125;</span><br></pre></td></tr></table></figure>
+<p>首先在1~n产生一个随机数X，然后对这个之前产生的数据进行遍历，判断是否存在有数等于这个新产生的随机数的，如果有，立flag，</p>
+<p>然后对之前的数据遍历完毕之后，判断flag是否立起来，</p>
+<p>如果是，就不添加这个随机数进数组，重新产生随机数并收起flag，再重新遍历已有的数据中是否已有这个随机数，</p>
+<p>如果否，就添加，直到n个数据产生完毕。</p>
+<p>最后输出这个n个数据。</p>
 
       
 
@@ -223,7 +251,7 @@ src="//music.163.com/outchain/player?type=0&id=67272505&auto=0&height=90"></ifra
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">博客</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
         		</li>
       		
 		</ul>
@@ -279,7 +307,7 @@ src="//music.163.com/outchain/player?type=0&id=67272505&auto=0&height=90"></ifra
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://anshangfan.github.io/2018/03/07/hello-world/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://anshangfan.github.io/2019/02/26/生成随机数/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -293,15 +321,11 @@ src="//music.163.com/outchain/player?type=0&id=67272505&auto=0&height=90"></ifra
   
 <nav id="article-nav">
   
-    <a href="/2018/03/07/用hexo在github上创建博客（mac版）/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          用hexo在github上创建博客（mac版）
-        
-      </div>
-    </a>
   
+    <a href="/2018/03/14/mysql学习02/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">mysql学习02</div>
+      <i class="icon-circle-right"></i>
+    </a>
   
 </nav>
 
